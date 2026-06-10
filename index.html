@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <title>- Contact Manager -</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="app-container">
+        <header class="header-container">
+          <h2 class="changing-header">Contact Manager</h2>
+        </header>
+        <div class="search-contact" id="search-contact-section">
+          <div class="contact-search-container">
+            <form>
+              <input
+                id="contact-search"
+                type="search"
+                name="q"
+                placeholder="Search contact here..."
+                aria-label="Search contact"
+              />
+            </form>
+            <div class="drop-down">
+              <div id="options" class="options">
+                <span class="option"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="add-contact hidden" id="add-contact-section">
+          <div class="mini-header">
+            <h3 class="add-contact-header">Add Contact</h3>
+          </div>
+          <form class="add-contact-form" id="add-contact-form">
+            <div class="wrapper">
+              <label for="full-name">Full Name: </label>
+              <input name="full-name" type="text" id="full-name" />
+            </div>
+            <div class="wrapper">
+              <label for="email">Email: </label>
+              <input name="email" type="email" id="email" />
+            </div>
+            <div class="wrapper">
+              <label for="phone">Phone: </label>
+              <input name="phone" type="tel" id="phone" />
+            </div>
+            <div class="wrapper">
+              <label for="address">Address: </label>
+              <input name="address" type="text" id="address" />
+            </div>
+            <div class="wrapper">
+              <label for="contact-type">Choose Contact Type:</label>
+              <select name="contact-type" id="contact-type">
+                <option value="">choose type of contact</option>
+                <option value="work">work</option>
+                <option value="friend">friend</option>
+                <option value="family">family</option>
+                <option value="other">other</option>
+              </select>
+            </div>
+          </form>
+          <div class="wrapper wrapper-btn">
+            <button class="btn" id="add-contact-btn">Add Contact</button>
+          </div>
+        </div>
+        <div class="contacts-list hidden" id="contacts-list-section">
+          <div class="contacts" id="contacts"></div>
+        </div>
+        <hr />
+        <div class="messages-container">
+          <p class="message" id="message"></p>
+        </div>
+        <div class="btn-container">
+          <button class="btn" id="contact-list-btn">Contact List</button>
+          <button class="btn hidden" id="search-contact-btn">Search</button>
+          <button class="btn" id="add-new-contact-btn">Add New Contact</button>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/6069679d1f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/javascript/script.js"></script>
+  </body>
+</html>
