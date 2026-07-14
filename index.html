@@ -11,86 +11,168 @@
     />
     <link rel="stylesheet" href="assets/css/style.css" />
 
-    <title>- Contact Manager -</title>
+    <title>- Movie/Book Tracker -</title>
   </head>
   <body>
-    <div class="main-container">
-      <div class="app-container">
-        <header class="header-container">
-          <h2 class="changing-header">Contact Manager</h2>
-        </header>
-        <div class="search-contact" id="search-contact-section">
-          <div class="contact-search-container">
-            <form>
-              <input
-                id="contact-search"
-                type="search"
-                name="q"
-                placeholder="Search contact here..."
-                aria-label="Search contact"
-              />
-            </form>
-            <div class="drop-down">
-              <div id="options" class="options">
-                <span class="option"></span>
-              </div>
+    <header>
+      <nav class="nav-container">
+        <div class="nav-wrapper">
+          <select name="categories" id="categories" class="categories">
+            <option value="">sort by...</option>
+            <option value="year">year</option>
+            <option value="category">category</option>
+            <option value="rating">rating</option>
+            <option value="book">book</option>
+            <option value="movie">movie</option>
+          </select>
+          <div class="wrapper">
+            <input
+              type="text"
+              name="search"
+              id="search"
+              class="search"
+              placeholder="search a movie/book"
+            />
+            <div class="search-container hidden"></div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="app-container">
+      <div class="splited-content">
+        <div class="books-movies-container">
+          <div class="make-sure-the-btn-is-last-element">
+            <h3>Books / Movies - Tracker</h3>
+            <hr />
+            <div class="books-movies"></div>
+            <hr />
+            <div class="btn-add-book-movie-wrapper">
+              <button class="add-book-movie-btn">Add Book/Movie</button>
             </div>
           </div>
         </div>
-        <div class="add-contact hidden" id="add-contact-section">
-          <div class="mini-header">
-            <h3 class="add-contact-header">Add Contact</h3>
-          </div>
-          <form class="add-contact-form" id="add-contact-form">
-            <div class="wrapper">
-              <label for="full-name">Full Name: </label>
-              <input name="full-name" type="text" id="full-name" />
+        <div class="statistics-container">
+          <div class="statistics">
+            <h3 class="statistics-header">Info Of Book/Movie</h3>
+            <div class="statistics-overview">
+              <h3 class="info-name">Movie/Book Name</h3>
+              <p class="info-type">Type</p>
+              <p class="info-year">Year</p>
+              <p class="info-desc">Desc</p>
+              <p class="info-rating">Rating</p>
+              <p class="info-reviews">Revies</p>
+              <p class="info-status">Status</p>
             </div>
-            <div class="wrapper">
-              <label for="email">Email: </label>
-              <input name="email" type="email" id="email" />
-            </div>
-            <div class="wrapper">
-              <label for="phone">Phone: </label>
-              <input name="phone" type="tel" id="phone" />
-            </div>
-            <div class="wrapper">
-              <label for="address">Address: </label>
-              <input name="address" type="text" id="address" />
-            </div>
-            <div class="wrapper">
-              <label for="contact-type">Choose Contact Type:</label>
-              <select name="contact-type" id="contact-type">
-                <option value="">choose type of contact</option>
-                <option value="work">work</option>
-                <option value="friend">friend</option>
-                <option value="family">family</option>
-                <option value="other">other</option>
-              </select>
-            </div>
-          </form>
-          <div class="wrapper wrapper-btn">
-            <button class="btn" id="add-contact-btn">Add Contact</button>
           </div>
         </div>
-        <div class="contacts-list hidden" id="contacts-list-section">
-          <div class="contacts" id="contacts"></div>
+      </div>
+    </main>
+    <div class="message-container">
+      <p class="message"></p>
+    </div>
+    <div class="book-movie-container hidden">
+      <div class="modal-contant">
+        <div class="wrapper-head">
+          <h3 class="book-movie-name"></h3>
+          <button class="close-book-info-btn">&#10005;</button>
         </div>
-        <hr />
-        <div class="messages-container">
-          <p class="message" id="message"></p>
-        </div>
-        <div class="btn-container">
-          <button class="btn" id="contact-list-btn">Contact List</button>
-          <button class="btn hidden" id="search-contact-btn">Search</button>
-          <button class="btn" id="add-new-contact-btn">Add New Contact</button>
+        <hr class="hr-book-movie-item" />
+        <div class="splited-actions">
+          <div class="wrapper-text-area">
+            <textarea
+              id="review-text-area"
+              class="review-text-area"
+              placeholder="your review..."
+            ></textarea>
+          </div>
+          <button class="submit-review-btn">submit review</button>
+          <div class="wrapper">
+            <p class="description-book-movie">here will be the description</p>
+          </div>
+          <div class="wrapper">
+            <select id="star-rating" class="star-rating">
+              <option value="">how many stars?</option>
+              <option value="1">*</option>
+              <option value="2">**</option>
+              <option value="3">***</option>
+              <option value="4">****</option>
+              <option value="5">*****</option>
+            </select>
+          </div>
         </div>
       </div>
     </div>
-    <script
-      src="https://kit.fontawesome.com/6069679d1f.js"
-      crossorigin="anonymous"
-    ></script>
+    <div class="add-book-movie-container hidden">
+      <div class="modal-contant">
+        <div class="wrapper-header">
+          <h3>add book/movie</h3>
+        </div>
+        <hr class="hr-book-movie-item" />
+        <div class="splited-actions-add-book-movie">
+          <div class="actions-one">
+            <div class="wrapper-actions-one">
+              <label>book or movie?</label>
+              <select id="book-or-movie-select" class="book-or-movie-select">
+                <option value="">choose...</option>
+                <option value="book">Book</option>
+                <option value="movie">Movie</option>
+              </select>
+            </div>
+            <div class="description-wrapper">
+              <label>add a description: (optional)</label>
+              <textarea
+                id="book-movie-desc"
+                class="book-movie-desc"
+                placeholder="add description here"
+              ></textarea>
+            </div>
+          </div>
+          <div class="actions-two">
+            <div class="form-wrapper">
+              <label>The Name Of The Book/Movie:</label>
+              <input
+                type="text"
+                id="book-movie-name"
+                class="book-movie-name"
+                placeholder="name?"
+              />
+            </div>
+            <div class="form-wrapper">
+              <label>The Year Of The Book/Movie:</label>
+              <input
+                type="number"
+                id="book-movie-year"
+                class="book-movie-year"
+                placeholder="what year?"
+              />
+            </div>
+            <div class="form-wrapper">
+              <label>what category?</label>
+              <select id="category-select-book-movie">
+                <option value="">choose...</option>
+                <option value="comedy">comedy</option>
+                <option value="drama">drama</option>
+                <option value="horror">horror</option>
+                <option value="action">action</option>
+                <option value="thriller">thriller</option>
+                <option value="sci-fi">sci-fi</option>
+                <option value="documentary">documentary</option>
+                <option value="else">else</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="btn-wrapper">
+          <button class="create-book-movie-btn">Create</button>
+          <button class="close-btn-add-book-movie">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <footer class="footer-container">
+      <hr />
+      <p class="footer-txt">&copy; 2026 Alex Broder. All rights reserved.</p>
+    </footer>
+
     <script src="assets/javascript/script.js"></script>
   </body>
 </html>
